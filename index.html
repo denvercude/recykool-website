@@ -1,18 +1,559 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecyKool — CSUN Senior Design Project Website</title>
 
-        <link rel="stylesheet" href="styles.css">
-    </head>
+    <!-- Submission 1 icon (replace path if needed) -->
+    <link rel="icon" type="image/png" href="images/CSUN_CS_SeniorDesign.png">
 
-    <body>
-        <div class="title">
-            <h1>RecyKool Project</h1>
+    <link rel="stylesheet" href="templatemo-noir-fashion.css">
+<!-- 
+TemplateMo 599 Noir Fashion
+https://templatemo.com/tm-599-noir-fashion
+-->
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo-link">
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:var(--accent);stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <polygon points="50,10 20,50 50,90 80,50" fill="none" stroke="url(#logoGrad)" stroke-width="3"/>
+                    <circle cx="50" cy="50" r="5" fill="url(#logoGrad)"/>
+                </svg>
+                <span class="logo-text">RecyKool</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#collections" class="nav-link">Team</a></li>
+                <li><a href="#featured" class="nav-link">Project</a></li>
+                <li><a href="#contact" class="nav-link">Demo & Contact</a></li>
+                <li><a href="#contact" class="nav-cta">View Demo</a></li>
+            </ul>
+
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+        <ul class="mobile-nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#collections">Team</a></li>
+            <li><a href="#featured">Project</a></li>
+            <li><a href="#contact">Demo & Contact</a></li>
+        </ul>
+    </div>
+
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-container">
+            <div class="hero-left">
+                <div class="hero-badge">CSUN Senior Design • 2025–2026</div>
+                <h1 class="hero-title">
+                    <span class="line"><span>Smarter</span></span>
+                    <span class="line"><span>Recycling,</span></span>
+                    <span class="line"><span>Powered by <span class="accent">AI</span></span></span>
+                </h1>
+
+                <p class="hero-description">
+                    RecyKool is a multimodal, agentic AI system designed to reduce downtime in Waste Management’s conveyor sorting system. 
+                    The platform combines an AI chatbot interface on Apple Vision Pro, an NVIDIA Omniverse Isaac Sim digital twin of the sorting line, 
+                    material characterization to identify items that may jam equipment, and gesture recognition to detect unsafe worker movements. 
+                    Together, these components provide real-time operational insight that helps improve line reliability, minimize stoppages, and support safer working conditions.
+                </p>
+
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">VLM</span>
+                        <span class="stat-label">Image Understanding</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">RAG</span>
+                        <span class="stat-label">Retrieval + Grounding</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">KG</span>
+                        <span class="stat-label">Structured Rules/Relations</span>
+                    </div>
+                </div>
+
+                <div class="cta-group">
+                    <a href="#featured" class="cta-button primary">Explore The Project</a>
+                    <a href="#contact" class="cta-button outline">Watch Demo</a>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="hero-image-wrapper">
+                    <div class="hero-carousel">
+                        <div class="carousel-slide active">
+                            <img src="images/recykool-hero-01.jpg" alt="RecyKool — Waste Guidance UI">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/recykool-hero-02.jpg" alt="RecyKool — Vision + Language Input">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/recykool-hero-03.jpg" alt="RecyKool — Digital Twin Context">
+                        </div>
+
+                        <div class="carousel-overlay"></div>
+                        <div class="carousel-indicators">
+                            <span class="indicator active" data-slide="0"></span>
+                            <span class="indicator" data-slide="1"></span>
+                            <span class="indicator" data-slide="2"></span>
+                        </div>
+                    </div>
+
+                    <div class="floating-tags">
+                        <div class="tag">Multimodal AI</div>
+                        <div class="tag">Knowledge-Grounded</div>
+                        <div class="tag">Senior Design</div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <script src="./main.js"></script>
-    </body>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- TEAM (repurposed "collections" section) -->
+    <section class="collections" id="collections">
+        <div class="section-header">
+            <h2 class="section-title">Team & Roles</h2>
+            <p class="section-subtitle">Group members, responsibilities, and profiles</p>
+        </div>
+        
+        <!-- UPDATED FILTER TABS -->
+        <div class="category-tabs">
+            <button class="tab-btn active" data-category="all">All</button>
+            <button class="tab-btn" data-category="agentic-ai">Agentic AI</button>
+            <button class="tab-btn" data-category="digital-twin">Digital Twin</button>
+            <button class="tab-btn" data-category="vlm">VLM</button>
+        </div>
+
+        <div class="grid" id="collectionsGrid">
+
+            <!-- Agentic AI (Johnathan + Denver) -->
+            <div class="collection-card" data-category="agentic-ai">
+                <div class="collection-thumbnail">
+                    <img src="images/team-jonathan.jpg" alt="Johnathan Aguilar">
+                </div>
+                <div class="card-content">
+                    <span class="card-badge">Project Lead</span>
+                    <h3 class="card-title">Johnathan Aguilar</h3>
+                    <p class="card-subtitle">Agentic AI Assistant Backend Developer</p>
+                    <p class="card-price">
+                        <a href="#" style="color: var(--accent); text-decoration:none;">GitHub</a>
+                        &nbsp;•&nbsp;
+                        <a href="#" style="color: var(--accent); text-decoration:none;">LinkedIn</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="collection-card" data-category="agentic-ai">
+                <div class="collection-thumbnail">
+                    <img src="images/team-denver.jpg" alt="Denver Cude">
+                </div>
+                <div class="card-content">
+                    <span class="card-badge">Core Dev</span>
+                    <h3 class="card-title">Denver Cude</h3>
+                    <p class="card-subtitle">VLM / Agentic AI Assistant Frontend Developer</p>
+                    <p class="card-price">
+                        <a href="#" style="color: var(--accent); text-decoration:none;">GitHub</a>
+                        &nbsp;•&nbsp;
+                        <a href="#" style="color: var(--accent); text-decoration:none;">LinkedIn</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Digital Twin (Alex + Andy) -->
+            <div class="collection-card" data-category="digital-twin">
+                <div class="collection-thumbnail">
+                    <img src="images/team-alexander.jpg" alt="Alexander Boutselis">
+                </div>
+                <div class="card-content">
+                    <span class="card-badge">Core Dev</span>
+                    <h3 class="card-title">Alexander Boutselis</h3>
+                    <p class="card-subtitle">Digital Twin Developer</p>
+                    <p class="card-price">
+                        <a href="#" style="color: var(--accent); text-decoration:none;">GitHub</a>
+                        &nbsp;•&nbsp;
+                        <a href="#" style="color: var(--accent); text-decoration:none;">LinkedIn</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="collection-card" data-category="digital-twin">
+                <div class="collection-thumbnail">
+                    <img src="images/team-andy.jpg" alt="Andy Ruiz">
+                </div>
+                <div class="card-content">
+                    <span class="card-badge">Core Dev</span>
+                    <h3 class="card-title">Andy Ruiz</h3>
+                    <p class="card-subtitle">Digital Twin Developer</p>
+                    <p class="card-price">
+                        <a href="#" style="color: var(--accent); text-decoration:none;">GitHub</a>
+                        &nbsp;•&nbsp;
+                        <a href="#" style="color: var(--accent); text-decoration:none;">LinkedIn</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- VLM (Angel + David) -->
+            <div class="collection-card" data-category="vlm">
+                <div class="collection-thumbnail">
+                    <img src="images/team-angel.jpg" alt="Angel Cortes-Gildo">
+                </div>
+                <div class="card-content">
+                    <span class="card-badge">Core Dev</span>
+                    <h3 class="card-title">Angel Cortes-Gildo</h3>
+                    <p class="card-subtitle">Human Gesture Recognition / VLM Developer</p>
+                    <p class="card-price">
+                        <a href="#" style="color: var(--accent); text-decoration:none;">GitHub</a>
+                        &nbsp;•&nbsp;
+                        <a href="#" style="color: var(--accent); text-decoration:none;">LinkedIn</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="collection-card" data-category="vlm">
+                <div class="collection-thumbnail">
+                    <img src="images/team-david.jpg" alt="David Sterin">
+                </div>
+                <div class="card-content">
+                    <span class="card-badge">Core Dev</span>
+                    <h3 class="card-title">David Sterin</h3>
+                    <p class="card-subtitle">Material Characterization / VLM Developer</p>
+                    <p class="card-price">
+                        <a href="#" style="color: var(--accent); text-decoration:none;">GitHub</a>
+                        &nbsp;•&nbsp;
+                        <a href="#" style="color: var(--accent); text-decoration:none;">LinkedIn</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- OPTIONAL: keep extra slots if you want 8 cards; otherwise leave as-is -->
+            <div class="collection-card" data-category="all">
+                <div class="collection-thumbnail">
+                    <img src="images/recykool-screenshot-01.jpg" alt="RecyKool Screenshot">
+                </div>
+                <div class="card-content">
+                    <span class="card-badge">Screenshots</span>
+                    <h3 class="card-title">Project Gallery</h3>
+                    <p class="card-subtitle">UI + Workflow Snapshots</p>
+                    <p class="card-price">See more below</p>
+                </div>
+            </div>
+
+            <div class="collection-card" data-category="all">
+                <div class="collection-thumbnail">
+                    <img src="images/recykool-screenshot-02.jpg" alt="RecyKool Screenshot">
+                </div>
+                <div class="card-content">
+                    <span class="card-badge">Demo</span>
+                    <h3 class="card-title">3–5 Minute Video</h3>
+                    <p class="card-subtitle">Embedded on this page</p>
+                    <p class="card-price">Scroll to Demo</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PROJECT (repurposed "featured" section) -->
+    <section class="featured" id="featured">
+        <div class="featured-container">
+            <div class="featured-hero">
+                <div class="featured-content">
+                    <span class="label">Project Overview</span>
+                    <h2>What RecyKool Does</h2>
+
+                    <p>
+                        RecyKool helps users make correct disposal decisions using multimodal AI.
+                        A user can submit text, images, or combined inputs to identify materials, understand common contamination mistakes,
+                        and receive grounded guidance that explains recommended actions. The system is designed to be practical, transparent,
+                        and aligned with real-world operational constraints.
+                        <br><br>
+                        <strong>Major Features:</strong> material identification, disposal guidance, retrieval-grounded explanations,
+                        structured knowledge reasoning, and context awareness via digital-twin concepts.
+                    </p>
+
+                    <div class="feature-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🧠</div>
+                            <div class="highlight-title">Technologies</div>
+                            <div class="highlight-desc">
+                                <a href="https://fastapi.tiangolo.com/" target="_blank" rel="nofollow" style="color: var(--accent); text-decoration:none;">FastAPI</a>,
+                                <a href="https://www.docker.com/" target="_blank" rel="nofollow" style="color: var(--accent); text-decoration:none;">Docker</a>,
+                                <a href="https://www.python.org/" target="_blank" rel="nofollow" style="color: var(--accent); text-decoration:none;">Python</a>
+                            </div>
+                        </div>
+
+                        <div class="highlight-item">
+                            <div class="highlight-icon">👓</div>
+                            <div class="highlight-title">Platform</div>
+                            <div class="highlight-desc">
+                                Vision-based UI concepts and multimodal interaction for a modern guidance experience.
+                            </div>
+                        </div>
+
+                        <div class="highlight-item">
+                            <div class="highlight-icon">♻️</div>
+                            <div class="highlight-title">AI Approach</div>
+                            <div class="highlight-desc">
+                                VLM + RAG + Knowledge Graph reasoning to reduce hallucination and improve reliability.
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="feature-cta">Jump to Demo</a>
+                </div>
+
+                <div class="featured-image-section">
+                    <div class="featured-image-grid">
+                        <div class="featured-img">
+                            <img src="images/recykool-feature-01.jpg" alt="RecyKool UI Screenshot">
+                        </div>
+                        <div class="featured-img">
+                            <img src="images/recykool-feature-02.jpg" alt="RecyKool Pipeline / Architecture">
+                        </div>
+                        <div class="featured-img">
+                            <img src="images/recykool-feature-03.jpg" alt="RecyKool Digital Twin Context">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonials">
+                <div class="testimonials-header">
+                    <h3>Skills Demonstrated</h3>
+                    <p class="section-subtitle">What we practiced and shipped</p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">★ ★ ★ ★ ★</div>
+                        <div class="testimonial-quote">
+                            "Multimodal AI: aligning image + text inputs into one reliable user workflow."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AI</div>
+                            <div class="author-info">
+                                <h4>VLM + Prompting</h4>
+                                <p>Vision-language understanding</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">★ ★ ★ ★ ★</div>
+                        <div class="testimonial-quote">
+                            "Grounded responses: retrieval-based reasoning to keep explanations tied to evidence."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">RG</div>
+                            <div class="author-info">
+                                <h4>RAG & Evaluation</h4>
+                                <p>Reduced hallucination risk</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">★ ★ ★ ★ ★</div>
+                        <div class="testimonial-quote">
+                            "End-to-end delivery: APIs, deployment patterns, integration, and demo-ready UX."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">DX</div>
+                            <div class="author-info">
+                                <h4>Full-Stack Delivery</h4>
+                                <p>Integration & reliability</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- DEMO + CONTACT (repurposed contact section) -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h2 class="section-title">Demo & Contact</h2>
+                <p class="section-subtitle">Screenshots, video, and project links</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-form-wrapper">
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Name</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Organization</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Class / Lab / Company" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Project question / collaboration" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us what you’d like to learn about RecyKool..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="form-submit">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">🎓</div>
+                        <div class="info-content">
+                            <h3>CSUN Senior Design</h3>
+                            <p>
+                                <a href="https://www.csun.edu/" target="_blank" rel="nofollow">California State University, Northridge</a><br>
+                                Course Projects Page:
+                                <a href="https://www.csun.edu/~xjiang/SeniorDesign/" target="_blank" rel="nofollow">Back to Course Page</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">🔗</div>
+                        <div class="info-content">
+                            <h3>Project Links</h3>
+                            <p>
+                                Repo: <a href="#" rel="nofollow">GitHub</a><br>
+                                Demo: <a href="#" rel="nofollow">YouTube</a><br>
+                                Documentation: <a href="#" rel="nofollow">Project Notes</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">🧩</div>
+                        <div class="info-content">
+                            <h3>Tech Stack</h3>
+                            <p>
+                                API: FastAPI • Python<br>
+                                Infra: Docker • Cloud Storage (if used)<br>
+                                AI: Vision-Language • RAG • Knowledge Graph
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Replace the map iframe with your 3–5 minute YouTube demo -->
+            <div class="map-section">
+                <div class="map-container">
+                    <iframe
+                        src="https://www.youtube.com/embed/VIDEO_ID_HERE"
+                        title="RecyKool Demo Video"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>RecyKool</h3>
+                <p>
+                    A CSUN Senior Design project exploring multimodal, agentic AI for practical waste-management guidance.
+                    Built to demonstrate our team’s engineering skills, system design, and end-to-end delivery.
+                </p>
+
+                <div class="social-links">
+                    <a href="https://www.facebook.com/csunorthridge" class="social-link" target="_blank" rel="nofollow">f</a>
+                    <a href="https://x.com/csunorthridge" class="social-link" target="_blank" rel="nofollow">t</a>
+                    <a href="https://www.instagram.com/csunorthridge/" class="social-link" target="_blank" rel="nofollow">i</a>
+                    <a href="https://www.linkedin.com/school/california-state-university-northridge/" class="social-link" target="_blank" rel="nofollow">in</a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>Project</h4>
+                <ul>
+                    <li><a href="#featured">Overview</a></li>
+                    <li><a href="#featured">Features</a></li>
+                    <li><a href="#collections">Team</a></li>
+                    <li><a href="#contact">Demo</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Technologies</h4>
+                <ul>
+                    <li><a href="https://fastapi.tiangolo.com/" target="_blank" rel="nofollow">FastAPI</a></li>
+                    <li><a href="https://www.python.org/" target="_blank" rel="nofollow">Python</a></li>
+                    <li><a href="https://www.docker.com/" target="_blank" rel="nofollow">Docker</a></li>
+                    <li><a href="https://developer.apple.com/xcode/" target="_blank" rel="nofollow">Xcode</a></li>
+                    <li><a href="https://developer.apple.com/visionos/" target="_blank" rel="nofollow">visionOS</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>CSUN</h4>
+                <ul>
+                    <li><a href="https://www.csun.edu/" target="_blank" rel="nofollow">CSUN Website</a></li>
+                    <li><a href="https://www.csun.edu/~xjiang/SeniorDesign/" target="_blank" rel="nofollow">Course Page</a></li>
+                    <li><a href="#home">Back to Top</a></li>
+                    <li><a href="#" rel="nofollow">Project Repo</a></li>
+                    <li><a href="#" rel="nofollow">Demo Video</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                <img src="images/csun-logo.png" alt="CSUN Logo" style="height:22px; vertical-align:middle; margin-right:10px;">
+                Copyright &copy; California State University, Northridge
+            </p>
+            <div class="payment-methods">
+                <a href="https://www.csun.edu/" target="_blank" rel="nofollow" class="payment-icon" style="text-decoration:none;">CSUN</a>
+                <a href="https://www.csun.edu/~xjiang/SeniorDesign/" target="_blank" rel="nofollow" class="payment-icon" style="text-decoration:none;">COURSE</a>
+                <a href="#featured" class="payment-icon" style="text-decoration:none;">PROJECT</a>
+                <a href="#collections" class="payment-icon" style="text-decoration:none;">TEAM</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="templatemo-noir-scripts.js"></script>
+</body>
 </html>
