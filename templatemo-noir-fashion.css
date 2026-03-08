@@ -1,9 +1,6 @@
 /*
-
 TemplateMo 599 Noir Fashion
-
 https://templatemo.com/tm-599-noir-fashion
-
 */
 
 @charset "utf-8";
@@ -23,6 +20,8 @@ https://templatemo.com/tm-599-noir-fashion
 	--text-muted: #9aa0a6;
 	--bg-dark: #000;
 	--bg-section: #0a0a0a;
+	--nav-height: 88px;
+	--nav-height-scrolled: 78px;
 }
 
 html {
@@ -30,7 +29,7 @@ html {
 }
 
 section {
-	scroll-margin-top: 70px;
+	scroll-margin-top: var(--nav-height);
 }
 
 body {
@@ -43,17 +42,23 @@ body {
 /* Navigation */
 nav {
 	position: fixed;
+	top: 0;
+	left: 0;
 	width: 100%;
-	padding: 20px 50px;
+	height: var(--nav-height);
+	padding: 0 50px;
 	z-index: 1000;
 	background: rgba(0, 0, 0, 0.95);
 	backdrop-filter: blur(10px);
 	animation: slideDown 0.8s ease;
 	transition: all 0.3s ease;
+	display: flex;
+	align-items: center;
 }
 
 nav.scrolled {
-	padding: 15px 50px;
+	height: var(--nav-height-scrolled);
+	padding: 0 50px;
 	background: rgba(0, 0, 0, 0.98);
 	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
@@ -63,6 +68,7 @@ nav.scrolled {
 	justify-content: space-between;
 	align-items: center;
 	max-width: 1400px;
+	width: 100%;
 	margin: 0 auto;
 	flex-wrap: wrap;
 	gap: 20px;
@@ -73,25 +79,17 @@ nav.scrolled {
 	align-items: center;
 	text-decoration: none;
 	transition: transform 0.3s ease;
+	flex-shrink: 0;
 }
 
 .logo-link:hover {
 	transform: scale(1.05);
 }
 
-.logo-svg {
-	width: 40px;
-	height: 40px;
-	margin-right: 10px;
-}
-
-.logo-text {
-	font-size: 28px;
-	font-weight: 900;
-	letter-spacing: -2px;
-	background: linear-gradient(135deg, #fff, var(--accent));
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+.logo-img {
+	height: 64px;
+	width: auto;
+	display: block;
 }
 
 .nav-links {
@@ -176,7 +174,7 @@ nav.scrolled {
 	.hero-container {
 		grid-template-columns: 1fr;
 		text-align: center;
-		padding-top: 120px;
+		padding-top: calc(var(--nav-height) + 32px);
 	}
 
 	.hero-left {
@@ -198,11 +196,6 @@ nav.scrolled {
 	}
 
 	.featured-container {
-		grid-template-columns: 1fr;
-		gap: 40px;
-	}
-
-	.featured-hero {
 		grid-template-columns: 1fr;
 		gap: 40px;
 	}
@@ -241,13 +234,19 @@ nav.scrolled {
 
 /* Medium screens - stack navigation */
 @media (max-width: 1070px) and (min-width: 769px) {
+	:root {
+		--nav-height: 120px;
+		--nav-height-scrolled: 110px;
+	}
+
 	nav {
-		padding: 15px 30px;
+		padding: 0 30px;
 	}
 
 	.nav-container {
 		flex-direction: column;
 		gap: 15px;
+		justify-content: center;
 	}
 
 	.nav-links {
@@ -260,11 +259,11 @@ nav.scrolled {
 	}
 
 	nav.scrolled {
-		padding: 10px 30px;
+		padding: 0 30px;
 	}
 
 	.hero-container {
-		padding: 0 30px;
+		padding: var(--nav-height) 30px 0;
 	}
 
 	.hero-title {
@@ -291,7 +290,7 @@ nav.scrolled {
 	}
 
 	section {
-		scroll-margin-top: 100px;
+		scroll-margin-top: var(--nav-height);
 	}
 }
 
@@ -416,7 +415,7 @@ nav.scrolled {
 	grid-template-columns: 1fr 1fr;
 	max-width: 1400px;
 	margin: 0 auto;
-	padding: 0 50px;
+	padding: var(--nav-height) 50px 0;
 	position: relative;
 	z-index: 2;
 	align-items: center;
@@ -638,37 +637,51 @@ nav.scrolled {
 	border-radius: 10px;
 	overflow: hidden;
 	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+	background: #050505;
+	border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .carousel-slide {
 	position: absolute;
-	width: 100%;
-	height: 100%;
+	inset: 0;
 	opacity: 0;
 	transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
-	transform: scale(1.1);
+	transform: scale(1.02);
+
+	/* matte frame */
+	padding: 22px;
+	background: #050505;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .carousel-slide.active {
 	opacity: 1;
 	transform: scale(1);
-	animation: kenburns 12s ease-out;
 }
 
 @keyframes kenburns {
 	0% {
 		transform: scale(1);
 	}
-
 	100% {
-		transform: scale(1.05);
+		transform: scale(1.02);
 	}
 }
 
 .carousel-slide img {
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
+
+	/* IMPORTANT: shows full image instead of cropping */
+	object-fit: contain;
+	object-position: center;
+
+	display: block;
+	background: #111;
+	border-radius: 6px;
 }
 
 .carousel-indicators {
@@ -701,7 +714,12 @@ nav.scrolled {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, transparent 50%, rgba(0, 0, 0, 0.3) 100%);
+	background: linear-gradient(
+		135deg,
+		rgba(0, 0, 0, 0.08) 0%,
+		transparent 50%,
+		rgba(0, 0, 0, 0.12) 100%
+	);
 	pointer-events: none;
 }
 
@@ -788,7 +806,6 @@ nav.scrolled {
 }
 
 @keyframes bounce {
-
 	0%,
 	100% {
 		transform: translateX(-50%) translateY(0);
@@ -1725,12 +1742,21 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+	:root {
+		--nav-height: 78px;
+		--nav-height-scrolled: 72px;
+	}
+
 	nav {
-		padding: 15px 20px;
+		padding: 0 20px;
 	}
 
 	.nav-links {
 		display: none;
+	}
+
+	.logo-img {
+		height: 52px;
 	}
 
 	.menu-toggle {
@@ -1743,13 +1769,13 @@ footer {
 
 	.hero-container {
 		grid-template-columns: 1fr;
-		padding: 0 20px;
+		padding: var(--nav-height) 20px 0;
 		text-align: center;
 	}
 
 	.hero-left {
 		padding-right: 0;
-		padding-top: 100px;
+		padding-top: 30px;
 	}
 
 	.hero-title {
@@ -1787,7 +1813,7 @@ footer {
 	}
 
 	section {
-		scroll-margin-top: 60px;
+		scroll-margin-top: var(--nav-height);
 	}
 
 	.grid {
